@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Navigation from '../Navigation/Navigation';
 import TableTemplate from '../TableTemplate/TableTemplate';
-import { apiRoot, dataSources } from '../../../../clientConfig';
 import axios from 'axios';
 import '../AdminPage/AdminPage.less';
 
@@ -14,7 +13,7 @@ class ProductList extends Component {
   }
 
   componentDidMount = async () => {
-    let response = await axios.get(`${dataSources.models}`);
+    let response = await axios.get('/api/store/all/models');
     this.setState({
       models: response.data
     });

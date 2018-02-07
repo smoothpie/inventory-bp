@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
-import { apiRoot } from '../../../clientConfig';
 import { Link } from 'react-router-dom';
 import NavBar from '../NavBar/NavBar';
 import Model from '../Model/Model';
@@ -23,7 +22,7 @@ class Models extends Component {
 
   async componentDidMount () {
     const { category } = this.props.location.state;
-    let response = await axios.get(`${apiRoot}/api/store/${category}/models`);
+    let response = await axios.get('/api/store/${category}/models');
     this.setState({
       models: response.data
     });

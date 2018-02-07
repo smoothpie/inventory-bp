@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import NavBar from '../NavBar/NavBar';
 import Category from '../Category/Category';
 import axios from 'axios';
-import { apiRoot } from '../../../clientConfig';
 import './MainPage.less';
 
 class MainPage extends Component {
@@ -15,7 +14,7 @@ class MainPage extends Component {
 
   async componentDidMount() {
     const { categories } = this.state;
-    let response = await axios.get(`${apiRoot}/api/store`);
+    let response = await axios.get('/api/store');
       this.setState({
         categories: response.data
       });

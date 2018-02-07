@@ -6,6 +6,7 @@
   "scripts": {
     "build": "webpack",
     "dev": "webpack-dev-server --port 8080",
+    "migrate": "./node_modules/.bin/sequelize db:migrate",
     "start": "nodemon ./www/index.js"
   },
   "devDependencies": {
@@ -56,6 +57,7 @@
     "pg-hstore": "^2.3.2",
     "prop-types": "^15.6.0",
     "react-router-dom": "^4.2.2",
-    "sequelize": "^4.28.6"
+    "sequelize": "^4.28.6",
+    "sequelize-cli": "^3.2.0"
   }
 }

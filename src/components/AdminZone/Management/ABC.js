@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { apiRoot, dataSources } from '../../../../clientConfig';
 import TableTemplate from '../TableTemplate/TableTemplate';
 import Recommendations from './Recomendations';
 import {
@@ -39,7 +38,7 @@ class ABC extends Component {
 
   getModels = async () => {
     this.setState({ loading: true });
-    let response = await axios.get(`${dataSources.models}`);
+    let response = await axios.get('/api/store/all/models');
     return response.data;
   }
 

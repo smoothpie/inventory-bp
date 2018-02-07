@@ -4,7 +4,6 @@ import NavBar from '../NavBar/NavBar';
 import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
 import RaisedButton from 'material-ui/RaisedButton';
 import Snackbar from 'material-ui/Snackbar';
-import { apiRoot } from '../../../clientConfig';
 import axios from 'axios';
 import './ModelPage.less';
 
@@ -48,7 +47,7 @@ class ModelPage extends Component {
         orderedModel = model;
       }
     });
-    let response = await axios.post(`${apiRoot}/api/store/all/orders/create`, {
+    let response = await axios.post('/api/store/all/orders/create', {
       size: orderSize,
       modelId: modelId
     });

@@ -1,0 +1,22 @@
+version: '2'
+services:
+  web:
+    image: smoothpie/inventory-bp:latest
+    working_dir: /app
+    ports:
+      - "80:80"
+    depends_on:
+      - postgres
+    environment:
+      - PORT=80
+      - HOST=0.0.0.0
+      - DB_CONNECTION=postgres://smoothpie:gontier@postgres:5432/inventory
+      - NODE_ENV=development
+  postgres:
+    image: postgres:9.6
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: smoothpie
+      POSTGRES_PASSWORD: gontier
+      POSTGRES_DB: inventory
